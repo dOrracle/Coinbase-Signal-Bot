@@ -21,10 +21,10 @@ with open(os.path.join(root, "coinbase", "__version__.py")) as f:
     exec(f.read(), about)
 
 setup(
-    name="coinbase-advanced-py",
-    version=about["__version__"],
+    name="coinbase",
+    version=about["2.1.0"],
     license="Apache 2.0",
-    description="Coinbase Advanced API Python SDK",
+    description="Coinbase 2.1.0 SDK",
     long_description=README,
     long_description_content_type="text/markdown",
     author="Coinbase",
