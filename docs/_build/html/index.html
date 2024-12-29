@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coinbase Advanced API Python SDK &mdash; Coinbase Advanced API Python SDK  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="REST API Client" href="coinbase.rest.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            Coinbase Advanced API Python SDK
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="coinbase.rest.html">REST API Client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="coinbase.websocket.html">Websocket API Client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="coinbase.websocket.user.html">Websocket User API Client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jwt_generator.html">Authentication</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">Coinbase Advanced API Python SDK</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Coinbase Advanced API Python SDK</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="coinbase-advanced-api-python-sdk">
+<h1>Coinbase Advanced API Python SDK<a class="headerlink" href="#coinbase-advanced-api-python-sdk" title="Link to this heading"></a></h1>
+</section>
+<hr class="docutils" />
+<section id="getting-started">
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading"></a></h1>
+<a class="reference external image-reference" href="https://pypi.org/project/coinbase-advanced-py/"><img alt="PyPI Version" src="https://badge.fury.io/py/coinbase-advanced-py.svg" /></a>
+<a class="reference external image-reference" href="https://opensource.org/licenses/Apache-2.0"><img alt="Apache License 2.0" src="https://img.shields.io/badge/License-Apache%202.0-green.svg" /></a>
+<p>Welcome to the official Coinbase Advanced API Python SDK. This python project was created to allow coders to easily plug
+into the <a class="reference external" href="https://docs.cdp.coinbase.com/advanced-trade/docs/welcome/">Coinbase Advanced API</a></p>
+<ul class="simple">
+<li><p>Docs: <a class="reference external" href="https://docs.cdp.coinbase.com/advanced-trade/docs/welcome/">https://docs.cdp.coinbase.com/advanced-trade/docs/welcome/</a></p></li>
+<li><p>Python SDK: <a class="reference external" href="https://github.com/coinbase/coinbase-advanced-py">https://github.com/coinbase/coinbase-advanced-py</a></p></li>
+</ul>
+<p>For detailed exercises on how to get started using the SDK look at our SDK Overview:
+<a class="reference external" href="https://docs.cdp.coinbase.com/advanced-trade/docs/sdk-overview">https://docs.cdp.coinbase.com/advanced-trade/docs/sdk-overview</a></p>
+<hr class="docutils" />
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="coinbase.rest.html">REST API Client</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="coinbase.rest.html#restclient-constructor">RESTClient Constructor</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient"><code class="docutils literal notranslate"><span class="pre">RESTClient</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="coinbase.rest.html#rest-utils">REST Utils</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.get"><code class="docutils literal notranslate"><span class="pre">get()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.post"><code class="docutils literal notranslate"><span class="pre">post()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.put"><code class="docutils literal notranslate"><span class="pre">put()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.delete"><code class="docutils literal notranslate"><span class="pre">delete()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="coinbase.rest.html#accounts">Accounts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.get_accounts"><code class="docutils literal notranslate"><span class="pre">get_accounts()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.get_account"><code class="docutils literal notranslate"><span class="pre">get_account()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="coinbase.rest.html#products">Products</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.get_products"><code class="docutils literal notranslate"><span class="pre">get_products()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.get_product"><code class="docutils literal notranslate"><span class="pre">get_product()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.get_product_book"><code class="docutils literal notranslate"><span class="pre">get_product_book()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.get_best_bid_ask"><code class="docutils literal notranslate"><span class="pre">get_best_bid_ask()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="coinbase.rest.html#market-data">Market Data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.get_candles"><code class="docutils literal notranslate"><span class="pre">get_candles()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.get_market_trades"><code class="docutils literal notranslate"><span class="pre">get_market_trades()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="coinbase.rest.html#orders">Orders</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.create_order"><code class="docutils literal notranslate"><span class="pre">create_order()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.market_order"><code class="docutils literal notranslate"><span class="pre">market_order()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.market_order_buy"><code class="docutils literal notranslate"><span class="pre">market_order_buy()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.market_order_sell"><code class="docutils literal notranslate"><span class="pre">market_order_sell()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.limit_order_ioc"><code class="docutils literal notranslate"><span class="pre">limit_order_ioc()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.limit_order_ioc_buy"><code class="docutils literal notranslate"><span class="pre">limit_order_ioc_buy()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.limit_order_ioc_sell"><code class="docutils literal notranslate"><span class="pre">limit_order_ioc_sell()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.limit_order_gtc"><code class="docutils literal notranslate"><span class="pre">limit_order_gtc()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.limit_order_gtc_buy"><code class="docutils literal notranslate"><span class="pre">limit_order_gtc_buy()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.limit_order_gtc_sell"><code class="docutils literal notranslate"><span class="pre">limit_order_gtc_sell()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.limit_order_gtd"><code class="docutils literal notranslate"><span class="pre">limit_order_gtd()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.limit_order_gtd_buy"><code class="docutils literal notranslate"><span class="pre">limit_order_gtd_buy()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.limit_order_gtd_sell"><code class="docutils literal notranslate"><span class="pre">limit_order_gtd_sell()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.limit_order_fok"><code class="docutils literal notranslate"><span class="pre">limit_order_fok()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.limit_order_fok_buy"><code class="docutils literal notranslate"><span class="pre">limit_order_fok_buy()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.limit_order_fok_sell"><code class="docutils literal notranslate"><span class="pre">limit_order_fok_sell()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.stop_limit_order_gtc"><code class="docutils literal notranslate"><span class="pre">stop_limit_order_gtc()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.stop_limit_order_gtc_buy"><code class="docutils literal notranslate"><span class="pre">stop_limit_order_gtc_buy()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.stop_limit_order_gtc_sell"><code class="docutils literal notranslate"><span class="pre">stop_limit_order_gtc_sell()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.stop_limit_order_gtd"><code class="docutils literal notranslate"><span class="pre">stop_limit_order_gtd()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.stop_limit_order_gtd_buy"><code class="docutils literal notranslate"><span class="pre">stop_limit_order_gtd_buy()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.stop_limit_order_gtd_sell"><code class="docutils literal notranslate"><span class="pre">stop_limit_order_gtd_sell()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.trigger_bracket_order_gtc"><code class="docutils literal notranslate"><span class="pre">trigger_bracket_order_gtc()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.trigger_bracket_order_gtc_buy"><code class="docutils literal notranslate"><span class="pre">trigger_bracket_order_gtc_buy()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.trigger_bracket_order_gtc_sell"><code class="docutils literal notranslate"><span class="pre">trigger_bracket_order_gtc_sell()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.trigger_bracket_order_gtd"><code class="docutils literal notranslate"><span class="pre">trigger_bracket_order_gtd()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.trigger_bracket_order_gtd_buy"><code class="docutils literal notranslate"><span class="pre">trigger_bracket_order_gtd_buy()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.trigger_bracket_order_gtd_sell"><code class="docutils literal notranslate"><span class="pre">trigger_bracket_order_gtd_sell()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.get_order"><code class="docutils literal notranslate"><span class="pre">get_order()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.list_orders"><code class="docutils literal notranslate"><span class="pre">list_orders()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.get_fills"><code class="docutils literal notranslate"><span class="pre">get_fills()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.edit_order"><code class="docutils literal notranslate"><span class="pre">edit_order()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.preview_edit_order"><code class="docutils literal notranslate"><span class="pre">preview_edit_order()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.cancel_orders"><code class="docutils literal notranslate"><span class="pre">cancel_orders()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.preview_order"><code class="docutils literal notranslate"><span class="pre">preview_order()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.preview_market_order"><code class="docutils literal notranslate"><span class="pre">preview_market_order()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.preview_market_order_buy"><code class="docutils literal notranslate"><span class="pre">preview_market_order_buy()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.preview_market_order_sell"><code class="docutils literal notranslate"><span class="pre">preview_market_order_sell()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.preview_limit_order_ioc"><code class="docutils literal notranslate"><span class="pre">preview_limit_order_ioc()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.preview_limit_order_ioc_buy"><code class="docutils literal notranslate"><span class="pre">preview_limit_order_ioc_buy()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.preview_limit_order_ioc_sell"><code class="docutils literal notranslate"><span class="pre">preview_limit_order_ioc_sell()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.preview_limit_order_gtc"><code class="docutils literal notranslate"><span class="pre">preview_limit_order_gtc()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.preview_limit_order_gtc_buy"><code class="docutils literal notranslate"><span class="pre">preview_limit_order_gtc_buy()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.preview_limit_order_gtc_sell"><code class="docutils literal notranslate"><span class="pre">preview_limit_order_gtc_sell()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.preview_limit_order_gtd"><code class="docutils literal notranslate"><span class="pre">preview_limit_order_gtd()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.preview_limit_order_gtd_buy"><code class="docutils literal notranslate"><span class="pre">preview_limit_order_gtd_buy()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.preview_limit_order_gtd_sell"><code class="docutils literal notranslate"><span class="pre">preview_limit_order_gtd_sell()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.preview_limit_order_fok"><code class="docutils literal notranslate"><span class="pre">preview_limit_order_fok()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.preview_limit_order_fok_buy"><code class="docutils literal notranslate"><span class="pre">preview_limit_order_fok_buy()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.preview_limit_order_fok_sell"><code class="docutils literal notranslate"><span class="pre">preview_limit_order_fok_sell()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.preview_stop_limit_order_gtc"><code class="docutils literal notranslate"><span class="pre">preview_stop_limit_order_gtc()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.preview_stop_limit_order_gtc_buy"><code class="docutils literal notranslate"><span class="pre">preview_stop_limit_order_gtc_buy()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.preview_stop_limit_order_gtc_sell"><code class="docutils literal notranslate"><span class="pre">preview_stop_limit_order_gtc_sell()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.preview_stop_limit_order_gtd"><code class="docutils literal notranslate"><span class="pre">preview_stop_limit_order_gtd()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.preview_stop_limit_order_gtd_buy"><code class="docutils literal notranslate"><span class="pre">preview_stop_limit_order_gtd_buy()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.preview_stop_limit_order_gtd_sell"><code class="docutils literal notranslate"><span class="pre">preview_stop_limit_order_gtd_sell()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.preview_trigger_bracket_order_gtc"><code class="docutils literal notranslate"><span class="pre">preview_trigger_bracket_order_gtc()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.preview_trigger_bracket_order_gtc_buy"><code class="docutils literal notranslate"><span class="pre">preview_trigger_bracket_order_gtc_buy()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.preview_trigger_bracket_order_gtc_sell"><code class="docutils literal notranslate"><span class="pre">preview_trigger_bracket_order_gtc_sell()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.preview_trigger_bracket_order_gtd"><code class="docutils literal notranslate"><span class="pre">preview_trigger_bracket_order_gtd()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.preview_trigger_bracket_order_gtd_buy"><code class="docutils literal notranslate"><span class="pre">preview_trigger_bracket_order_gtd_buy()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.preview_trigger_bracket_order_gtd_sell"><code class="docutils literal notranslate"><span class="pre">preview_trigger_bracket_order_gtd_sell()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.close_position"><code class="docutils literal notranslate"><span class="pre">close_position()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="coinbase.rest.html#portfolios">Portfolios</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.get_portfolios"><code class="docutils literal notranslate"><span class="pre">get_portfolios()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.create_portfolio"><code class="docutils literal notranslate"><span class="pre">create_portfolio()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.get_portfolio_breakdown"><code class="docutils literal notranslate"><span class="pre">get_portfolio_breakdown()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.move_portfolio_funds"><code class="docutils literal notranslate"><span class="pre">move_portfolio_funds()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.edit_portfolio"><code class="docutils literal notranslate"><span class="pre">edit_portfolio()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.delete_portfolio"><code class="docutils literal notranslate"><span class="pre">delete_portfolio()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="coinbase.rest.html#futures">Futures</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.get_futures_balance_summary"><code class="docutils literal notranslate"><span class="pre">get_futures_balance_summary()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.list_futures_positions"><code class="docutils literal notranslate"><span class="pre">list_futures_positions()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.get_futures_position"><code class="docutils literal notranslate"><span class="pre">get_futures_position()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.schedule_futures_sweep"><code class="docutils literal notranslate"><span class="pre">schedule_futures_sweep()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.list_futures_sweeps"><code class="docutils literal notranslate"><span class="pre">list_futures_sweeps()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.cancel_pending_futures_sweep"><code class="docutils literal notranslate"><span class="pre">cancel_pending_futures_sweep()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.get_intraday_margin_setting"><code class="docutils literal notranslate"><span class="pre">get_intraday_margin_setting()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.get_current_margin_window"><code class="docutils literal notranslate"><span class="pre">get_current_margin_window()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.set_intraday_margin_setting"><code class="docutils literal notranslate"><span class="pre">set_intraday_margin_setting()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="coinbase.rest.html#perpetuals">Perpetuals</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.allocate_portfolio"><code class="docutils literal notranslate"><span class="pre">allocate_portfolio()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.get_perps_portfolio_summary"><code class="docutils literal notranslate"><span class="pre">get_perps_portfolio_summary()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.list_perps_positions"><code class="docutils literal notranslate"><span class="pre">list_perps_positions()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.get_perps_position"><code class="docutils literal notranslate"><span class="pre">get_perps_position()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.get_perps_portfolio_balances"><code class="docutils literal notranslate"><span class="pre">get_perps_portfolio_balances()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.opt_in_or_out_multi_asset_collateral"><code class="docutils literal notranslate"><span class="pre">opt_in_or_out_multi_asset_collateral()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="coinbase.rest.html#fees">Fees</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.get_transaction_summary"><code class="docutils literal notranslate"><span class="pre">get_transaction_summary()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="coinbase.rest.html#converts">Converts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.create_convert_quote"><code class="docutils literal notranslate"><span class="pre">create_convert_quote()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.get_convert_trade"><code class="docutils literal notranslate"><span class="pre">get_convert_trade()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.commit_convert_trade"><code class="docutils literal notranslate"><span class="pre">commit_convert_trade()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="coinbase.rest.html#public">Public</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.get_unix_time"><code class="docutils literal notranslate"><span class="pre">get_unix_time()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.get_public_product_book"><code class="docutils literal notranslate"><span class="pre">get_public_product_book()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.get_public_products"><code class="docutils literal notranslate"><span class="pre">get_public_products()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.get_public_product"><code class="docutils literal notranslate"><span class="pre">get_public_product()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.get_public_candles"><code class="docutils literal notranslate"><span class="pre">get_public_candles()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.get_public_market_trades"><code class="docutils literal notranslate"><span class="pre">get_public_market_trades()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="coinbase.rest.html#payments">Payments</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.list_payment_methods"><code class="docutils literal notranslate"><span class="pre">list_payment_methods()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.get_payment_method"><code class="docutils literal notranslate"><span class="pre">get_payment_method()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="coinbase.rest.html#data-api">Data API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.rest.html#coinbase.rest.RESTClient.get_api_key_permissions"><code class="docutils literal notranslate"><span class="pre">get_api_key_permissions()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="coinbase.websocket.html">Websocket API Client</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="coinbase.websocket.html#wsclient-constructor">WSClient Constructor</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.html#coinbase.websocket.WSClient"><code class="docutils literal notranslate"><span class="pre">WSClient</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="coinbase.websocket.html#websocket-utils">WebSocket Utils</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.html#coinbase.websocket.WSClient.open"><code class="docutils literal notranslate"><span class="pre">open()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.html#coinbase.websocket.WSClient.open_async"><code class="docutils literal notranslate"><span class="pre">open_async()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.html#coinbase.websocket.WSClient.close"><code class="docutils literal notranslate"><span class="pre">close()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.html#coinbase.websocket.WSClient.close_async"><code class="docutils literal notranslate"><span class="pre">close_async()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.html#coinbase.websocket.WSClient.subscribe"><code class="docutils literal notranslate"><span class="pre">subscribe()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.html#coinbase.websocket.WSClient.subscribe_async"><code class="docutils literal notranslate"><span class="pre">subscribe_async()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.html#coinbase.websocket.WSClient.unsubscribe"><code class="docutils literal notranslate"><span class="pre">unsubscribe()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.html#coinbase.websocket.WSClient.unsubscribe_async"><code class="docutils literal notranslate"><span class="pre">unsubscribe_async()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.html#coinbase.websocket.WSClient.unsubscribe_all"><code class="docutils literal notranslate"><span class="pre">unsubscribe_all()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.html#coinbase.websocket.WSClient.unsubscribe_all_async"><code class="docutils literal notranslate"><span class="pre">unsubscribe_all_async()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.html#coinbase.websocket.WSClient.sleep_with_exception_check"><code class="docutils literal notranslate"><span class="pre">sleep_with_exception_check()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.html#coinbase.websocket.WSClient.sleep_with_exception_check_async"><code class="docutils literal notranslate"><span class="pre">sleep_with_exception_check_async()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.html#coinbase.websocket.WSClient.run_forever_with_exception_check"><code class="docutils literal notranslate"><span class="pre">run_forever_with_exception_check()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.html#coinbase.websocket.WSClient.run_forever_with_exception_check_async"><code class="docutils literal notranslate"><span class="pre">run_forever_with_exception_check_async()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.html#coinbase.websocket.WSClient.raise_background_exception"><code class="docutils literal notranslate"><span class="pre">raise_background_exception()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="coinbase.websocket.html#channels">Channels</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.html#coinbase.websocket.WSClient.heartbeats"><code class="docutils literal notranslate"><span class="pre">heartbeats()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.html#coinbase.websocket.WSClient.heartbeats_async"><code class="docutils literal notranslate"><span class="pre">heartbeats_async()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.html#coinbase.websocket.WSClient.heartbeats_unsubscribe"><code class="docutils literal notranslate"><span class="pre">heartbeats_unsubscribe()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.html#coinbase.websocket.WSClient.heartbeats_unsubscribe_async"><code class="docutils literal notranslate"><span class="pre">heartbeats_unsubscribe_async()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.html#coinbase.websocket.WSClient.candles"><code class="docutils literal notranslate"><span class="pre">candles()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.html#coinbase.websocket.WSClient.candles_async"><code class="docutils literal notranslate"><span class="pre">candles_async()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.html#coinbase.websocket.WSClient.candles_unsubscribe"><code class="docutils literal notranslate"><span class="pre">candles_unsubscribe()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.html#coinbase.websocket.WSClient.candles_unsubscribe_async"><code class="docutils literal notranslate"><span class="pre">candles_unsubscribe_async()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.html#coinbase.websocket.WSClient.market_trades"><code class="docutils literal notranslate"><span class="pre">market_trades()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.html#coinbase.websocket.WSClient.market_trades_async"><code class="docutils literal notranslate"><span class="pre">market_trades_async()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.html#coinbase.websocket.WSClient.market_trades_unsubscribe"><code class="docutils literal notranslate"><span class="pre">market_trades_unsubscribe()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.html#coinbase.websocket.WSClient.market_trades_unsubscribe_async"><code class="docutils literal notranslate"><span class="pre">market_trades_unsubscribe_async()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.html#coinbase.websocket.WSClient.status"><code class="docutils literal notranslate"><span class="pre">status()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.html#coinbase.websocket.WSClient.status_async"><code class="docutils literal notranslate"><span class="pre">status_async()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.html#coinbase.websocket.WSClient.status_unsubscribe"><code class="docutils literal notranslate"><span class="pre">status_unsubscribe()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.html#coinbase.websocket.WSClient.status_unsubscribe_async"><code class="docutils literal notranslate"><span class="pre">status_unsubscribe_async()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.html#coinbase.websocket.WSClient.ticker"><code class="docutils literal notranslate"><span class="pre">ticker()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.html#coinbase.websocket.WSClient.ticker_async"><code class="docutils literal notranslate"><span class="pre">ticker_async()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.html#coinbase.websocket.WSClient.ticker_unsubscribe"><code class="docutils literal notranslate"><span class="pre">ticker_unsubscribe()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.html#coinbase.websocket.WSClient.ticker_unsubscribe_async"><code class="docutils literal notranslate"><span class="pre">ticker_unsubscribe_async()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.html#coinbase.websocket.WSClient.ticker_batch"><code class="docutils literal notranslate"><span class="pre">ticker_batch()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.html#coinbase.websocket.WSClient.ticker_batch_async"><code class="docutils literal notranslate"><span class="pre">ticker_batch_async()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.html#coinbase.websocket.WSClient.ticker_batch_unsubscribe"><code class="docutils literal notranslate"><span class="pre">ticker_batch_unsubscribe()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.html#coinbase.websocket.WSClient.ticker_batch_unsubscribe_async"><code class="docutils literal notranslate"><span class="pre">ticker_batch_unsubscribe_async()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.html#coinbase.websocket.WSClient.level2"><code class="docutils literal notranslate"><span class="pre">level2()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.html#coinbase.websocket.WSClient.level2_async"><code class="docutils literal notranslate"><span class="pre">level2_async()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.html#coinbase.websocket.WSClient.level2_unsubscribe"><code class="docutils literal notranslate"><span class="pre">level2_unsubscribe()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.html#coinbase.websocket.WSClient.level2_unsubscribe_async"><code class="docutils literal notranslate"><span class="pre">level2_unsubscribe_async()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.html#coinbase.websocket.WSClient.user"><code class="docutils literal notranslate"><span class="pre">user()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.html#coinbase.websocket.WSClient.user_async"><code class="docutils literal notranslate"><span class="pre">user_async()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.html#coinbase.websocket.WSClient.user_unsubscribe"><code class="docutils literal notranslate"><span class="pre">user_unsubscribe()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.html#coinbase.websocket.WSClient.user_unsubscribe_async"><code class="docutils literal notranslate"><span class="pre">user_unsubscribe_async()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.html#coinbase.websocket.WSClient.futures_balance_summary"><code class="docutils literal notranslate"><span class="pre">futures_balance_summary()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.html#coinbase.websocket.WSClient.futures_balance_summary_async"><code class="docutils literal notranslate"><span class="pre">futures_balance_summary_async()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.html#coinbase.websocket.WSClient.futures_balance_summary_unsubscribe"><code class="docutils literal notranslate"><span class="pre">futures_balance_summary_unsubscribe()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.html#coinbase.websocket.WSClient.futures_balance_summary_unsubscribe_async"><code class="docutils literal notranslate"><span class="pre">futures_balance_summary_unsubscribe_async()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="coinbase.websocket.html#exceptions">Exceptions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.html#coinbase.websocket.WSClientException"><code class="docutils literal notranslate"><span class="pre">WSClientException()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.html#coinbase.websocket.WSClientConnectionClosedException"><code class="docutils literal notranslate"><span class="pre">WSClientConnectionClosedException()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="coinbase.websocket.user.html">Websocket User API Client</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="coinbase.websocket.user.html#wsuserclient-constructor">WSUserClient Constructor</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.user.html#coinbase.websocket.WSUserClient"><code class="docutils literal notranslate"><span class="pre">WSUserClient</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="coinbase.websocket.user.html#websocket-utils">WebSocket Utils</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.user.html#coinbase.websocket.WSUserClient.open"><code class="docutils literal notranslate"><span class="pre">open()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.user.html#coinbase.websocket.WSUserClient.open_async"><code class="docutils literal notranslate"><span class="pre">open_async()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.user.html#coinbase.websocket.WSUserClient.close"><code class="docutils literal notranslate"><span class="pre">close()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.user.html#coinbase.websocket.WSUserClient.close_async"><code class="docutils literal notranslate"><span class="pre">close_async()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.user.html#coinbase.websocket.WSUserClient.subscribe"><code class="docutils literal notranslate"><span class="pre">subscribe()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.user.html#coinbase.websocket.WSUserClient.subscribe_async"><code class="docutils literal notranslate"><span class="pre">subscribe_async()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.user.html#coinbase.websocket.WSUserClient.unsubscribe"><code class="docutils literal notranslate"><span class="pre">unsubscribe()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.user.html#coinbase.websocket.WSUserClient.unsubscribe_async"><code class="docutils literal notranslate"><span class="pre">unsubscribe_async()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.user.html#coinbase.websocket.WSUserClient.unsubscribe_all"><code class="docutils literal notranslate"><span class="pre">unsubscribe_all()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.user.html#coinbase.websocket.WSUserClient.unsubscribe_all_async"><code class="docutils literal notranslate"><span class="pre">unsubscribe_all_async()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.user.html#coinbase.websocket.WSUserClient.sleep_with_exception_check"><code class="docutils literal notranslate"><span class="pre">sleep_with_exception_check()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.user.html#coinbase.websocket.WSUserClient.sleep_with_exception_check_async"><code class="docutils literal notranslate"><span class="pre">sleep_with_exception_check_async()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.user.html#coinbase.websocket.WSUserClient.run_forever_with_exception_check"><code class="docutils literal notranslate"><span class="pre">run_forever_with_exception_check()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.user.html#coinbase.websocket.WSUserClient.run_forever_with_exception_check_async"><code class="docutils literal notranslate"><span class="pre">run_forever_with_exception_check_async()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.user.html#coinbase.websocket.WSUserClient.raise_background_exception"><code class="docutils literal notranslate"><span class="pre">raise_background_exception()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="coinbase.websocket.user.html#channels">Channels</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.user.html#coinbase.websocket.WSUserClient.heartbeats"><code class="docutils literal notranslate"><span class="pre">heartbeats()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.user.html#coinbase.websocket.WSUserClient.heartbeats_async"><code class="docutils literal notranslate"><span class="pre">heartbeats_async()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.user.html#coinbase.websocket.WSUserClient.heartbeats_unsubscribe"><code class="docutils literal notranslate"><span class="pre">heartbeats_unsubscribe()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.user.html#coinbase.websocket.WSUserClient.heartbeats_unsubscribe_async"><code class="docutils literal notranslate"><span class="pre">heartbeats_unsubscribe_async()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.user.html#coinbase.websocket.WSUserClient.user"><code class="docutils literal notranslate"><span class="pre">user()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.user.html#coinbase.websocket.WSUserClient.user_async"><code class="docutils literal notranslate"><span class="pre">user_async()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.user.html#coinbase.websocket.WSUserClient.user_unsubscribe"><code class="docutils literal notranslate"><span class="pre">user_unsubscribe()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.user.html#coinbase.websocket.WSUserClient.user_unsubscribe_async"><code class="docutils literal notranslate"><span class="pre">user_unsubscribe_async()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.user.html#coinbase.websocket.WSUserClient.futures_balance_summary"><code class="docutils literal notranslate"><span class="pre">futures_balance_summary()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.user.html#coinbase.websocket.WSUserClient.futures_balance_summary_async"><code class="docutils literal notranslate"><span class="pre">futures_balance_summary_async()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.user.html#coinbase.websocket.WSUserClient.futures_balance_summary_unsubscribe"><code class="docutils literal notranslate"><span class="pre">futures_balance_summary_unsubscribe()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coinbase.websocket.user.html#coinbase.websocket.WSUserClient.futures_balance_summary_unsubscribe_async"><code class="docutils literal notranslate"><span class="pre">futures_balance_summary_unsubscribe_async()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="coinbase.websocket.user.html#exceptions">Exceptions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="jwt_generator.html">Authentication</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="jwt_generator.html#coinbase.jwt_generator.build_rest_jwt"><code class="docutils literal notranslate"><span class="pre">build_rest_jwt()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="jwt_generator.html#coinbase.jwt_generator.build_ws_jwt"><code class="docutils literal notranslate"><span class="pre">build_ws_jwt()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="jwt_generator.html#coinbase.jwt_generator.format_jwt_uri"><code class="docutils literal notranslate"><span class="pre">format_jwt_uri()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="coinbase.rest.html" class="btn btn-neutral float-right" title="REST API Client" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Coinbase.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
