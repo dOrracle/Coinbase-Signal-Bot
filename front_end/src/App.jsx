@@ -7,24 +7,18 @@ import './App.css';
 
 function App() {
   const [botState, setBotState] = useState({
-    isConnected: false,
     isTrading: false,
     error: null,
-    trades: [],
     balances: {},
-    orders: [],
     currentPair: '',
+    trades: [],
+    tradeInfo: null
   });
 
   useEffect(() => {
     const ws = new WebSocketManager();
-    
     ws.connect();
-    
-    ws.onMessage((data) => {
-      handleWebSocketData(data);
-    });
-
+    ws.onMessage(handleWebSocketData);
     return () => ws.disconnect();
   }, []);
 
@@ -33,11 +27,10 @@ function App() {
       case 'TRADE_CONFIRMATION':
         setBotState(prev => ({
           ...prev,
-          trades: [data.payload, ...prev.trades],
-          balances: data.payload.newBalances
+          tradeInfo: data.payload,
+          trades: [data.payload, ...prev.trades]
         }));
         break;
-        
       case 'BOT_STATUS':
         setBotState(prev => ({
           ...prev,
@@ -45,14 +38,9 @@ function App() {
           currentPair: data.payload.tradingPair
         }));
         break;
-        
       case 'ERROR':
-        setBotState(prev => ({
-          ...prev,
-          error: data.payload
-        }));
+        setBotState(prev => ({...prev, error: data.payload}));
         break;
-
       default:
         console.log('Unhandled message type:', data.type);
     }
@@ -84,6 +72,7 @@ function App() {
       <div className="app-container">
         <Dashboard 
           botState={botState}
+          setTradeInfo={(info) => setBotState(prev => ({...prev, tradeInfo: info}))}
           onBotControl={handleBotControl}
         />
       </div>

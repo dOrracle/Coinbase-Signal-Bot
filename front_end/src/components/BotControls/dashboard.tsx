@@ -1,40 +1,60 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Grid, Paper } from '@mui/material';
-import TradeHistory from './TradeHistory';
-import BotControls from './BotControls';
-import BalanceDisplay from './BalanceDisplay';
-import ErrorAlert from './ErrorAlert';
+import { BotControls } from './BotControls';
+import { BalanceDisplay } from './BalanceDisplay';
+import { ErrorAlert } from './ErrorAlert';
+import { TradeHistory } from './TradeHistory';
 
-// Define the props type for the Dashboard component
-interface DashboardProps {
-  tradeInfo: any; // Replace 'any' with a more specific type if known
-  setTradeInfo: React.Dispatch<React.SetStateAction<any>>; // Replace 'any' with a more specific type if known
-  botState: any; // Replace 'any' with a more specific type if known
-  onBotControl: (control: any) => void; // Replace 'any' with a more specific type if known
+interface TradeInfo {
+  pair: string;
+  price: number;
+  amount: number;
+  side: 'buy' | 'sell';
+  timestamp: number;
+  status: string;
 }
 
-const Dashboard: React.FC<DashboardProps> = ({ tradeInfo, setTradeInfo, botState, onBotControl }) => {
+interface BotState {
+  isTrading: boolean;
+  error: string | null;
+  balances: Record<string, number>;
+  currentPair: string;
+  trades: TradeInfo[];
+}
+
+interface DashboardProps {
+  tradeInfo: TradeInfo | null;
+  setTradeInfo: (info: TradeInfo | null) => void;
+  botState: BotState;
+  onBotControl: (action: string) => void;
+}
+
+const Dashboard: React.FC<DashboardProps> = ({ 
+  tradeInfo, 
+  setTradeInfo, 
+  botState, 
+  onBotControl 
+}) => {
   const [selectedTimeframe, setSelectedTimeframe] = useState('1h');
 
-  // Logic to handle trade confirmation and pass data to components
-  const handleTradeConfirmation = (info: any) => { // Replace 'any' with a more specific type if known
-    // Process the trade confirmation info
+  const handleTradeConfirmation = (info: TradeInfo) => {
     console.log('Trade confirmed:', info);
-    // Update state or perform actions based on trade confirmation
+    // Add any additional trade processing logic here
+    setTradeInfo(null); // Clear after processing
   };
 
   useEffect(() => {
     if (tradeInfo) {
       handleTradeConfirmation(tradeInfo);
     }
-  }, [tradeInfo]);
+  }, [tradeInfo, setTradeInfo]);
 
   return (
     <Box sx={{ flexGrow: 1, p: 3 }}>
       {botState.error && (
         <ErrorAlert 
           error={botState.error} 
-          onClose={() => setBotState(prev => ({ ...prev, error: null }))}
+          onClose={() => onBotControl('clearError')}
         />
       )}
 
@@ -69,6 +89,6 @@ const Dashboard: React.FC<DashboardProps> = ({ tradeInfo, setTradeInfo, botState
       </Grid>
     </Box>
   );
-}
+};
 
 export default Dashboard;
