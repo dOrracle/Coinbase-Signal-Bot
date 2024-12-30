@@ -1,7 +1,6 @@
-import React from 'react';
 import { Box, Heading } from '@coinbase/onchainkit';
 // Import your preferred charting library, e.g., react-chartjs-2
-// import { Line } from 'react-chartjs-2';
+import { Line } from 'react-chartjs-2';
 
 export function Visualizations() {
     // Placeholder data for the charts
@@ -43,13 +42,13 @@ export function Visualizations() {
             <Heading as="h3" size="sm">Visualizations</Heading>
             {/* Replace with actual chart components */}
             <Box>
-                {/* <Line data={balanceHistoryData} /> */}
+                <Line data={balanceHistoryData} />
             </Box>
             <Box>
-                {/* <Line data={profitLossData} /> */}
+                <Line data={profitLossData} />
             </Box>
             <Box>
-                {/* <Line data={performanceDistributionData} /> */}
+                <Line data={performanceDistributionData} />
             </Box>
         </Box>
     );

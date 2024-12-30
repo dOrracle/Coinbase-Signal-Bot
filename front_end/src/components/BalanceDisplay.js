@@ -1,5 +1,5 @@
-import React from 'react';
 import { Box, Heading, Text, Divider } from '@coinbase/onchainkit';
+import PropTypes from 'prop-types';
 
 export function BalanceDisplay({ balances, activeTradingPair }) {
     return (
@@ -12,12 +12,12 @@ export function BalanceDisplay({ balances, activeTradingPair }) {
         </Box>
     );
 }
-``````javascript
-import React from 'react';
-import { Box, Text } from '@coinbase/onchainkit';
 
-export function LastSignal({ signal }) {
-    return (
-        <Box marginTop={4}>
-            <Text>Last Signal: {JSON.stringify(signal)}</Text>
-        </Box>
+// PropTypes for validation
+BalanceDisplay.propTypes = {
+    balances: PropTypes.shape({
+        USD: PropTypes.number.isRequired,
+        USDC: PropTypes.number.isRequired,
+    }).isRequired,
+    activeTradingPair: PropTypes.string.isRequired,
+};

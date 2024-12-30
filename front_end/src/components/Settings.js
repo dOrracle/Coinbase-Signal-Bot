@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Box, Heading, TextField, Button } from '@coinbase/onchainkit';
+import PropTypes from 'prop-types';
 
 export function Settings({ settings, onSave }) {
     const [apiKey, setApiKey] = useState(settings.apiKey || '');
@@ -13,10 +14,33 @@ export function Settings({ settings, onSave }) {
     return (
         <Box marginTop={4}>
             <Heading as="h3" size="sm">Settings</Heading>
-            <TextField label="API Key" value={apiKey} onChange={(e) => setApiKey(e.target.value)} />
-            <TextField label="API Secret" value={apiSecret} onChange={(e) => setApiSecret(e.target.value)} type="password" />
-            <TextField label="Webhook URL" value={webhookUrl} onChange={(e) => setWebhookUrl(e.target.value)} />
+            <TextField 
+                label="API Key" 
+                value={apiKey} 
+                onChange={(e) => setApiKey(e.target.value)} 
+            />
+            <TextField 
+                label="API Secret" 
+                value={apiSecret} 
+                onChange={(e) => setApiSecret(e.target.value)} 
+                type="password" 
+            />
+            <TextField 
+                label="Webhook URL" 
+                value={webhookUrl} 
+                onChange={(e) => setWebhookUrl(e.target.value)} 
+            />
             <Button onClick={handleSave}>Save Settings</Button>
         </Box>
     );
 }
+
+// PropTypes for validation
+Settings.propTypes = {
+    settings: PropTypes.shape({
+        apiKey: PropTypes.string,
+        apiSecret: PropTypes.string,
+        webhookUrl: PropTypes.string,
+    }).isRequired,
+    onSave: PropTypes.func.isRequired,
+};

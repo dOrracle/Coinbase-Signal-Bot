@@ -1,12 +1,15 @@
-import React from 'react';
-import { Box, Toggle } from '@coinbase/onchainkit';
+import PropTypes from 'prop-types';
 
 export function BotToggle({ isOn, onToggle }) {
     return (
-        <Box marginTop={4}>
-            <Toggle checked={isOn} onChange={onToggle}>
-                Bot Status: {isOn ? 'ON' : 'OFF'}
-            </Toggle>
-        </Box>
+        <button onClick={onToggle}>
+            {isOn ? 'Turn Off' : 'Turn On'}
+        </button>
     );
 }
+
+// PropTypes for validation
+BotToggle.propTypes = {
+    isOn: PropTypes.bool.isRequired,
+    onToggle: PropTypes.func.isRequired,
+};

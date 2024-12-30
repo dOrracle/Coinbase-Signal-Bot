@@ -1,10 +1,14 @@
-import React from 'react';
-import { Box, Text } from '@coinbase/onchainkit';
+import PropTypes from 'prop-types';
 
 export function LastSignal({ signal }) {
     return (
-        <Box marginTop={4}>
-            <Text>Last Signal: {JSON.stringify(signal)}</Text>
-        </Box>
+        <div>
+            <p>Last Signal: {JSON.stringify(signal)}</p>
+        </div>
     );
 }
+
+// PropTypes for validation
+LastSignal.propTypes = {
+    signal: PropTypes.object.isRequired,
+};
