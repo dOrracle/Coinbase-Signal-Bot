@@ -1,34 +1,94 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Dashboard from './Dashboard'
+import { useState, useEffect } from 'react';
+import { ThemeProvider } from '@mui/material';
+import Dashboard from './components/Dashboard';
+import WebSocketManager from './services/WebSocketManager';
+import { theme } from './theme';
+import './App.css';
 
 function App() {
-  const [tradeInfo, setTradeInfo] = useState(null)
+  const [botState, setBotState] = useState({
+    isConnected: false,
+    isTrading: false,
+    error: null,
+    trades: [],
+    balances: {},
+    orders: [],
+    currentPair: '',
+  });
+
+  useEffect(() => {
+    const ws = new WebSocketManager();
+    
+    ws.connect();
+    
+    ws.onMessage((data) => {
+      handleWebSocketData(data);
+    });
+
+    return () => ws.disconnect();
+  }, []);
+
+  const handleWebSocketData = (data) => {
+    switch (data.type) {
+      case 'TRADE_CONFIRMATION':
+        setBotState(prev => ({
+          ...prev,
+          trades: [data.payload, ...prev.trades],
+          balances: data.payload.newBalances
+        }));
+        break;
+        
+      case 'BOT_STATUS':
+        setBotState(prev => ({
+          ...prev,
+          isTrading: data.payload.isActive,
+          currentPair: data.payload.tradingPair
+        }));
+        break;
+        
+      case 'ERROR':
+        setBotState(prev => ({
+          ...prev,
+          error: data.payload
+        }));
+        break;
+
+      default:
+        console.log('Unhandled message type:', data.type);
+    }
+  };
+
+  const handleBotControl = async (action) => {
+    try {
+      const response = await fetch(`/api/bot/${action}`, {
+        method: 'POST',
+      });
+      
+      if (!response.ok) throw new Error('Failed to control bot');
+      
+      const data = await response.json();
+      setBotState(prev => ({
+        ...prev,
+        isTrading: data.isActive
+      }));
+    } catch (error) {
+      setBotState(prev => ({
+        ...prev,
+        error: error.message
+      }));
+    }
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <ThemeProvider theme={theme}>
+      <div className="app-container">
+        <Dashboard 
+          botState={botState}
+          onBotControl={handleBotControl}
+        />
       </div>
-      <h1>Vite + React</h1>
-      <Dashboard tradeInfo={tradeInfo} setTradeInfo={setTradeInfo} />
-      <div className="card">
-        <button onClick={() => setTradeInfo({ /* mock trade confirmation data */ })}>
-          Simulate Trade Confirmation
-        </button>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </ThemeProvider>
+  );
 }
 
-export default App
+export default App;
